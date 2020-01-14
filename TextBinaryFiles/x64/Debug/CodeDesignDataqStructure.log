@@ -1,2 +1,5 @@
-﻿  functions.cpp
-  CodeDesignDataqStructure.vcxproj -> c:\users\s199026\source\repos\CodeDesignDataqStructure\x64\Debug\CodeDesignDataqStructure.exe
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (CodeDesignDataqStructure.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  functions.cpp
+  main.cpp
+  Generating Code...
+  CodeDesignDataqStructure.vcxproj -> c:\users\s199026\source\repos\CodeDesignDataqStructure\x64\Debug\TextBinaryFile.exe
