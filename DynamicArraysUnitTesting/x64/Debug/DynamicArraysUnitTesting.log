@@ -1,0 +1,5 @@
+﻿  tVector.cpp
+c:\users\s199026\source\repos\codedesigndataqstructure\dynamicarraysunittesting\tvector.cpp(3): error C2955: 'tVector': use of class template requires template argument list
+  c:\users\s199026\source\repos\codedesigndataqstructure\dynamicarraysunittesting\tvector.h(5): note: see declaration of 'tVector'
+c:\users\s199026\source\repos\codedesigndataqstructure\dynamicarraysunittesting\tvector.cpp(3): error C2509: '{ctor}': member function not declared in 'tVector'
+  c:\users\s199026\source\repos\codedesigndataqstructure\dynamicarraysunittesting\tvector.h(5): note: see declaration of 'tVector'
