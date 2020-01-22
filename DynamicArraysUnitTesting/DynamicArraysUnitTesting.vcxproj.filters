@@ -23,7 +23,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="tVector.h">
+    <ClInclude Include="tempVector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

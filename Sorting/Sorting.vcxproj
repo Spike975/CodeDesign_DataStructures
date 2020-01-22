@@ -117,10 +117,12 @@
   <ItemGroup>
     <ClCompile Include="functions.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="mergeSort.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HighScoreEntry.h" />
     <ClInclude Include="HighScoreTable.h" />
+    <ClInclude Include="mergeSort.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

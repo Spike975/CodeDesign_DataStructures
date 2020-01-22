@@ -1,0 +1,6 @@
+﻿  main.cpp
+c:\users\s199026\source\repos\codedesigndataqstructure\mergesort\main.cpp(7): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  mergeSort.cpp
+c:\users\s199026\source\repos\codedesigndataqstructure\mergesort\mergesort.cpp(21): warning C4018: '<=': signed/unsigned mismatch
+  Generating Code...
+  MergeSort.vcxproj -> C:\Users\s199026\source\repos\CodeDesignDataqStructure\Debug\MergeSort.exe

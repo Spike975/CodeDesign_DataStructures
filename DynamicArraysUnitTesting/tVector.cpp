@@ -1,5 +1,3 @@
-#include "tVector.h"
+#include "tempVector.h"
 
-tVector::tVector() {
-
-}
+tempVector<int> * h;

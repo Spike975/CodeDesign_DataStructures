@@ -119,7 +119,7 @@
     <ClCompile Include="tVector.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="tVector.h" />
+    <ClInclude Include="tempVector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

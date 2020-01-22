@@ -29,6 +29,7 @@ void merge(int * arr, size_t first, size_t middle, size_t last) {
 		}
 	}
 }
+
 void mergeSort(int * arr, size_t first, size_t last) {
 	if (first < last) {
 		int middle = (first + last) / 2;

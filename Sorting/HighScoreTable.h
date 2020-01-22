@@ -1,6 +1,7 @@
 #pragma once
 
 #include "HighScoreEntry.h"
+#include "mergeSort.h"
 #include <string>
 #include <fstream>
 #include <vector>
@@ -10,6 +11,7 @@ class HighScoreTable
 public:
 	std::vector<HighScoreEntry> hsVector;
 	std::vector<HighScoreEntry> topNNScores(int topRows);
+	void sortMerge();
 	void bubbleSort();
 	void insertSort();
 	void bubbleSortRev();

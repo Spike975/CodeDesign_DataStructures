@@ -9,7 +9,7 @@ int main() {
 	*size = 14;
 	int * arr = new int[*size];
 	for (int i = 0; i < *size; i++) {
-		arr[i] = rand() + 1;
+		arr[i] = rand() % 50 + 1;
 	}
 	for (int i = 0; i < *size; i++) {
 		std::cout << arr[i] <<"\n";

@@ -70,6 +70,9 @@ std::vector<HighScoreEntry> HighScoreTable::topNNScores(int topRows) {
 	}
 	return scores;
 }
+void HighScoreTable::sortMerge() {
+	mergeSort(hsVector, 0,hsVector.size());
+}
 void HighScoreTable::bubbleSort() {
 	HighScoreEntry temp;
 	for (size_t i = hsVector.size() - 1; i >= 0; i--) {
