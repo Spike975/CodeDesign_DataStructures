@@ -1,16 +1,19 @@
 #include "tVector.h"
+#include "Stack.h"
 int main() {
 	tVector<int> * test = new tVector<int>;
+	tStack<int> tests;
+	tQueue<int> queue;
 
-	test->push_back(14);
-	test->push_back(18);
-	test->push_back(8);
-	test->push_back(3);
-	test->push_back(5);
-	test->pop_back();
-	test->reserve(10);
-
-	test->print();
-
+	queue.push(14);
+	queue.print();
+	queue.push(11);
+	queue.print();
+	queue.push(7);
+	queue.print();
+	queue.push(9);
+	queue.print();
+	queue.pop();
+	queue.print();
 	return 0;
 }

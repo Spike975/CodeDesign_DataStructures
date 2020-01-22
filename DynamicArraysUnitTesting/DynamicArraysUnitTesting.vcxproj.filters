@@ -18,15 +18,9 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="funct.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="tVector.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Queue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Stack.h">
