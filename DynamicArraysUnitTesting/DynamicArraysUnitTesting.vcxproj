@@ -115,11 +115,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="funct.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="tVector.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="tempVector.h" />
+    <ClInclude Include="Queue.h" />
+    <ClInclude Include="Stack.h" />
+    <ClInclude Include="tVector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
