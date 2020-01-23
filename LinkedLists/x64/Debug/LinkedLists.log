@@ -1,14 +1,11 @@
 ﻿  main.cpp
-c:\users\s199026\source\repos\codedesigndataqstructure\linkedlists\tlinkedlist.h(29): error C2440: '=': cannot convert from 'tForwardList<int>::Node' to 'tForwardList<int>::Node *'
-  c:\users\s199026\source\repos\codedesigndataqstructure\linkedlists\tlinkedlist.h(29): note: No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
-  c:\users\s199026\source\repos\codedesigndataqstructure\linkedlists\tlinkedlist.h(22): note: while compiling class template member function 'void tForwardList<int>::push_front(const T &)'
-          with
-          [
-              T=int
-          ]
-  c:\users\s199026\source\repos\codedesigndataqstructure\linkedlists\main.cpp(5): note: see reference to function template instantiation 'void tForwardList<int>::push_front(const T &)' being compiled
-          with
-          [
-              T=int
-          ]
-  c:\users\s199026\source\repos\codedesigndataqstructure\linkedlists\main.cpp(4): note: see reference to class template instantiation 'tForwardList<int>' being compiled
+c:\users\s199026\source\repos\codedesign_datastructures\linkedlists\tlinkedlist.h(133): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  c:\users\s199026\source\repos\codedesign_datastructures\linkedlists\tlinkedlist.h(146): note: see reference to class template instantiation 'interator<T>' being compiled
+c:\users\s199026\source\repos\codedesign_datastructures\linkedlists\tlinkedlist.h(133): error C2143: syntax error: missing ',' before '<'
+c:\users\s199026\source\repos\codedesign_datastructures\linkedlists\tlinkedlist.h(140): error C3646: 'begin': unknown override specifier
+c:\users\s199026\source\repos\codedesign_datastructures\linkedlists\tlinkedlist.h(140): error C2059: syntax error: '('
+c:\users\s199026\source\repos\codedesign_datastructures\linkedlists\tlinkedlist.h(140): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+c:\users\s199026\source\repos\codedesign_datastructures\linkedlists\tlinkedlist.h(143): error C3646: 'end': unknown override specifier
+c:\users\s199026\source\repos\codedesign_datastructures\linkedlists\tlinkedlist.h(143): error C2059: syntax error: '('
+c:\users\s199026\source\repos\codedesign_datastructures\linkedlists\tlinkedlist.h(143): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+c:\users\s199026\source\repos\codedesign_datastructures\linkedlists\tlinkedlist.h(134): error C3861: 'otherNode': identifier not found

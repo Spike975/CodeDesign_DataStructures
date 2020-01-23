@@ -1,11 +1,7 @@
 ﻿  functions.cpp
-c:\users\s199026\source\repos\codedesigndataqstructure\sorting\functions.cpp(74): error C2672: 'mergeSort': no matching overloaded function found
-c:\users\s199026\source\repos\codedesigndataqstructure\sorting\functions.cpp(74): error C2784: 'void mergeSort(T *,size_t,size_t)': could not deduce template argument for 'T *' from 'std::vector<HighScoreEntry,std::allocator<_Ty>>'
-          with
-          [
-              _Ty=HighScoreEntry
-          ]
-  c:\users\s199026\source\repos\codedesigndataqstructure\sorting\mergesort.h(7): note: see declaration of 'mergeSort'
+c:\users\s199026\source\repos\codedesign_datastructures\sorting\highscoretable.h(4): fatal error C1083: Cannot open include file: 'mergeSort.h': No such file or directory
   main.cpp
+c:\users\s199026\source\repos\codedesign_datastructures\sorting\highscoretable.h(4): fatal error C1083: Cannot open include file: 'mergeSort.h': No such file or directory
   mergeSort.cpp
+c1xx : fatal error C1083: Cannot open source file: 'mergeSort.cpp': No such file or directory
   Generating Code...
