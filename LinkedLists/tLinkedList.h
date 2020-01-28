@@ -60,9 +60,7 @@ public:
 	}
 	void pop_front() {
 		if (head != NULL) {
-			Node<T> * temp = new Node<T>;
-			temp = head->next;
-			head = temp;
+			head = head->next;
 			size--;
 		}
 		else {

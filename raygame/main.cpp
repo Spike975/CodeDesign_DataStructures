@@ -24,7 +24,7 @@ int main()
 
 
 	tObjectPool<Texture2D> * meteors = new tObjectPool<Texture2D>;
-	meteors->setObject(LoadTexture("resources/spaceMissiles_001.png"));
+	meteors->setObject(LoadTexture("resources/spaceMeteors_001.png"));
 	meteors->setSize(80);
 	SetTargetFPS(60);
 	while (!WindowShouldClose()){
@@ -33,8 +33,6 @@ int main()
 
 		meteors->Draw();
 		meteors->update();
-		meteors->cleanUp();
-		meteors->add();
 
 
 		EndDrawing();

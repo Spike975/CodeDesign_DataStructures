@@ -1,14 +1,14 @@
 ﻿  main.cpp
 c:\users\s199026\source\repos\codedesigndataqstructure\raygame\main.cpp(18): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\users\s199026\source\repos\codedesigndataqstructure\raygame\tobjectpools.h(106): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  c:\users\s199026\source\repos\codedesigndataqstructure\raygame\tobjectpools.h(105): note: while compiling class template member function 'void tObjectPool<Texture2D>::setSize(size_t)'
+c:\users\s199026\source\repos\codedesigndataqstructure\raygame\tobjectpools.h(117): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  c:\users\s199026\source\repos\codedesigndataqstructure\raygame\tobjectpools.h(116): note: while compiling class template member function 'void tObjectPool<Texture2D>::setSize(size_t)'
   c:\users\s199026\source\repos\codedesigndataqstructure\raygame\main.cpp(28): note: see reference to function template instantiation 'void tObjectPool<Texture2D>::setSize(size_t)' being compiled
   c:\users\s199026\source\repos\codedesigndataqstructure\raygame\main.cpp(26): note: see reference to class template instantiation 'tObjectPool<Texture2D>' being compiled
-c:\users\s199026\source\repos\codedesigndataqstructure\raygame\tobjectpools.h(61): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  c:\users\s199026\source\repos\codedesigndataqstructure\raygame\tobjectpools.h(58): note: while compiling class template member function 'void tObjectPool<Texture2D>::Draw(void)'
+c:\users\s199026\source\repos\codedesigndataqstructure\raygame\tobjectpools.h(65): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  c:\users\s199026\source\repos\codedesigndataqstructure\raygame\tobjectpools.h(62): note: while compiling class template member function 'void tObjectPool<Texture2D>::Draw(void)'
   c:\users\s199026\source\repos\codedesigndataqstructure\raygame\main.cpp(34): note: see reference to function template instantiation 'void tObjectPool<Texture2D>::Draw(void)' being compiled
-c:\users\s199026\source\repos\codedesigndataqstructure\raygame\tobjectpools.h(127): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  c:\users\s199026\source\repos\codedesigndataqstructure\raygame\tobjectpools.h(119): note: while compiling class template member function 'void tObjectPool<Texture2D>::setActive(size_t)'
-  c:\users\s199026\source\repos\codedesigndataqstructure\raygame\tobjectpools.h(96): note: see reference to function template instantiation 'void tObjectPool<Texture2D>::setActive(size_t)' being compiled
-c:\users\s199026\source\repos\codedesigndataqstructure\raygame\tobjectpools.h(128): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\s199026\source\repos\codedesigndataqstructure\raygame\tobjectpools.h(138): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  c:\users\s199026\source\repos\codedesigndataqstructure\raygame\tobjectpools.h(130): note: while compiling class template member function 'void tObjectPool<Texture2D>::setActive(size_t)'
+  c:\users\s199026\source\repos\codedesigndataqstructure\raygame\tobjectpools.h(106): note: see reference to function template instantiation 'void tObjectPool<Texture2D>::setActive(size_t)' being compiled
+c:\users\s199026\source\repos\codedesigndataqstructure\raygame\tobjectpools.h(139): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   raygame.vcxproj -> C:\Users\s199026\source\repos\CodeDesignDataqStructure\x64\Debug\MeteorObjects.exe

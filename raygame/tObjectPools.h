@@ -24,6 +24,7 @@ public:
 		thistime = 0;
 		pool = new T[poolCapacity];
 		pos = new position[poolCapacity];
+		free = new bool[poolCapacity];
 	}
 	tObjectPool(size_t initialCapacity) {
 		poolCapacity = initialCapacity;
@@ -32,32 +33,35 @@ public:
 		for (int i = 0; i < poolCapacity; i++) {
 			pool[i] = nothing;
 		}
+		free = new bool[poolCapacity];
 		pos = position[poolCapacity];
 	}
 	~tObjectPool() {
 		delete[] pool;
 		delete[] pos;
-		delete free;
+		delete[] free;
 	}
 
 	void zeroed() {
 		for (int i = 0; i < poolCapacity; i++) {
-			if (pool[i] == NULL) {
-				pos[i]->x = 0;
-				pos[i]->y = 0;
+			if (!free[i]) {
+				pos[i].x = 0;
+				pos[i].y = 0;
 			}
 		}
 	}
 	void update() {
 		for (int i = 0; i < poolCapacity; i++) {
-			if (pool[i].id != nothing.id) {
+			if (free[i]) {
 				pos[i].y += 2;
 			}
 		}
+		cleanUp();
+		add();
 	}
 	void Draw() {
 		for (int i = 0; i < poolCapacity; i++) {
-			if (pool[i].id != nothing.id) {
+			if (free[i]) {
 				DrawTexture(pool[i], pos[i].x, pos[i].y, WHITE);
 			}
 			else {
@@ -66,39 +70,46 @@ public:
 		}
 	}
 	void updateT() {
-		T * temp;
 		for (int i = 0; i < poolCapacity; i++) {
-			if (pool[i] == nothing && pool[i+1] != nothing && i < poolCapacity + 1) {
-				temp = pool[i];
+			if (pool[i].id == 0 && pool[i+1].id != 0 && i < poolCapacity + 1) {
 				pool[i] = pool[i + 1];
-				pool = temp;
+				pos[i] = pos[i + 1];
+				free[i] = free[i + 1];
+				pool[i + 1] = nothing;
+				free[i + 1] = false;
+				pos[i + 1].x = 0;
+				pos[i + 1].y = 0;
 			}
 		}
-		delete temp;
 	}
+	void updateClicked() {
+
+	}
+
 
 	T * retreive(size_t place) {
 		if (pool[place] == nothing) {
-			return NULL;
+			return nothing;
 		}
 		return pool[place];
 	}
 	void cleanUp() {
 		for (int i = 0; i < poolCapacity; i++) {
-			if (pos[i].y >= GetScreenHeight()+object.height) {
-				pool[i] = nothing;
+			if (pos[i].y >= GetScreenHeight()+(object.height/2)) {
+				recycle(i);
 			}
 		}
 	}
 	void add() {
 		for (int i = 0; i < poolCapacity; i++) {
-			if (pool[i].id == nothing.id) {
+			if (!free[i]) {
 				setActive(i);
 			}
 		}
 	}
 	void recycle(size_t place) {
 		pool[place] = nothing;
+
 		updateT();
 		zeroed();
 	}
@@ -121,11 +132,12 @@ public:
 			std::cout << "ERROR!";
 		}
 		else {
-			if (GetTime() - thistime > .1) {
+			if (GetTime() - thistime > 0.2f) {
 				thistime = GetTime();
 				pool[size] = object;
 				pos[size].x = rand() % GetScreenWidth();
 				pos[size].y = -object.height;
+				free[size] = true;
 			}
 		}
 	}
