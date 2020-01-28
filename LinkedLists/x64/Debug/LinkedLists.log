@@ -1,11 +1,6 @@
 ﻿  main.cpp
-c:\users\s199026\source\repos\codedesign_datastructures\linkedlists\tlinkedlist.h(133): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  c:\users\s199026\source\repos\codedesign_datastructures\linkedlists\tlinkedlist.h(146): note: see reference to class template instantiation 'interator<T>' being compiled
-c:\users\s199026\source\repos\codedesign_datastructures\linkedlists\tlinkedlist.h(133): error C2143: syntax error: missing ',' before '<'
-c:\users\s199026\source\repos\codedesign_datastructures\linkedlists\tlinkedlist.h(140): error C3646: 'begin': unknown override specifier
-c:\users\s199026\source\repos\codedesign_datastructures\linkedlists\tlinkedlist.h(140): error C2059: syntax error: '('
-c:\users\s199026\source\repos\codedesign_datastructures\linkedlists\tlinkedlist.h(140): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
-c:\users\s199026\source\repos\codedesign_datastructures\linkedlists\tlinkedlist.h(143): error C3646: 'end': unknown override specifier
-c:\users\s199026\source\repos\codedesign_datastructures\linkedlists\tlinkedlist.h(143): error C2059: syntax error: '('
-c:\users\s199026\source\repos\codedesign_datastructures\linkedlists\tlinkedlist.h(143): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
-c:\users\s199026\source\repos\codedesign_datastructures\linkedlists\tlinkedlist.h(134): error C3861: 'otherNode': identifier not found
+c:\users\s199026\source\repos\codedesigndataqstructure\linkedlists\tlinkedlist.h(96): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  c:\users\s199026\source\repos\codedesigndataqstructure\linkedlists\tlinkedlist.h(76): note: while compiling class template member function 'void tForwardList<int>::resize(size_t)'
+  c:\users\s199026\source\repos\codedesigndataqstructure\linkedlists\main.cpp(12): note: see reference to function template instantiation 'void tForwardList<int>::resize(size_t)' being compiled
+  c:\users\s199026\source\repos\codedesigndataqstructure\linkedlists\main.cpp(4): note: see reference to class template instantiation 'tForwardList<int>' being compiled
+  LinkedLists.vcxproj -> C:\Users\s199026\source\repos\CodeDesignDataqStructure\x64\Debug\LinkedLists.exe
