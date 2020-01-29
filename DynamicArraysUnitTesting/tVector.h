@@ -2,16 +2,16 @@
 
 #include <iostream>
 
-template <typename T>
+template <typename K>
 class tVector{
 	const static size_t GROWTH_FACTOR = 2;
 private:
-	T * arr;
+	K * arr;
 	size_t arrSize;
 	size_t arrCapacity;
 public:
 	tVector() {
-		arr = new T[1];
+		arr = new K[1];
 		arrSize = 0;
 		arrCapacity = 0;
 	}
@@ -25,7 +25,7 @@ public:
 		arrSize = vec.arrSize;
 		arrCapacity = vec.arrCapacity;
 	}
-	T & operator[](size_t index) {
+	K & operator[](size_t index) {
 		return arr[index];
 	}
 	~tVector() {
@@ -38,7 +38,7 @@ public:
 		}
 		return false;
 	}
-	T * data() {
+	K * data() {
 		return arr;
 	}
 	void print() {
@@ -51,7 +51,7 @@ public:
 
 	void reserve(size_t newCapacity) {
 		if(newCapacity > arrCapacity){
-			T * temp = new T[newCapacity];
+			K * temp = new K[newCapacity];
 			for (int i = 0; i < newCapacity; i++) {
 				if (i < arrCapacity) {
 					temp[i] = arr[i];
@@ -67,7 +67,7 @@ public:
 		}
 	}
 	void resize(size_t newSize){
-		T * temp = new T[newSize];
+		K * temp = new K[newSize];
 		for (int i = 0; i < newSize; i++) {
 			if (i < arrCapacity) {
 				temp[i] = arr[i];
@@ -83,7 +83,7 @@ public:
 		arrCapacity = newSize;
 	}
 	void shrinkToFit() {
-		T * temp = new T[arrSize];
+		K * temp = new K[arrSize];
 		for (int i = 0; i < arrSize; i++) {
 			temp[i] = arr[i];
 		}
@@ -96,9 +96,9 @@ public:
 		arrCapacity = 0;
 	}
 	
-	void push_front(const T &value) {
+	void push_front(const K &value) {
 		if (arrSize == arrCapacity) {
-			T * temp = new T[arrCapacity + 1];
+			K * temp = new K[arrCapacity + 1];
 			for (int i = 1; i < arrCapacity+1; i++) {
 					temp[i] = arr[i-1];
 			}
@@ -109,7 +109,7 @@ public:
 			arr = temp;
 		}
 		else if (arrSize < arrCapacity) {
-			T * temp = new T[arrCapacity];
+			K * temp = new K[arrCapacity];
 			for (int i = 1; i < arrCapacity; i++) {
 				temp[i+1] = arr[i];
 			}
@@ -120,7 +120,7 @@ public:
 		}
 	}
 	void pop_front() {
-		T * temp = new T[arrCapacity];
+		K * temp = new K[arrCapacity];
 		for (int i = 1; i < arrCapacity; i ++) {
 			temp[i - 1] = arr[i];
 		}
@@ -129,9 +129,9 @@ public:
 		arrSize--;
 		arr = temp;
 	}
-	void push_back(const T &value) {
+	void push_back(const K &value) {
 		if (arrSize == arrCapacity) {
-			T * temp = new T[arrCapacity + 1];
+			K * temp = new K[arrCapacity + 1];
 			for (int i = 0; i < arrCapacity; i++) {
 				temp[i] = arr[i];
 			}
@@ -142,7 +142,7 @@ public:
 			arr = temp;
 		}
 		else if( arrSize < arrCapacity) {
-			T * temp = new T[arrCapacity];
+			K * temp = new K[arrCapacity];
 			for (int i = 0; i < arrCapacity; i++) {
 				temp[i] = arr[i];
 			}
@@ -153,7 +153,7 @@ public:
 		}
 	}
 	void pop_back() {
-		T * temp = new T[arrCapacity];
+		K * temp = new K[arrCapacity];
 		for (int i = 0; i < arrCapacity; i++) {
 			if (i < arrSize) {
 				temp[i] = arr[i];
@@ -167,7 +167,7 @@ public:
 		arrSize--;
 	}
 
-	T & at(size_t index) {
+	K & at(size_t index) {
 		return arr[index];
 	}
 

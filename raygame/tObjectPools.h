@@ -8,12 +8,12 @@ struct position {
 	float x, y;
 };
 
-template<typename T>
+template<typename K>
 class tObjectPool {
 private:
-	T * pool;
-	T * object;
-	T nothing;
+	K * pool;
+	K * object;
+	K nothing;
 	double thistime;
 	position * pos;
 	bool * free;
@@ -26,7 +26,7 @@ public:
 	tObjectPool() {
 		poolCapacity = 0;
 		thistime = 0;
-		pool = new T[poolCapacity];
+		pool = new K[poolCapacity];
 		pos = new position[poolCapacity];
 		free = new bool[poolCapacity];
 		boolReset();
@@ -36,7 +36,7 @@ public:
 	tObjectPool(size_t initialCapacity) {
 		poolCapacity = initialCapacity;
 		thistime = 0;
-		pool = T[poolCapacity];
+		pool = K[poolCapacity];
 		for (int i = 0; i < poolCapacity; i++) {
 			pool[i] = nothing;
 		}
@@ -85,6 +85,7 @@ public:
 			}
 		}
 	}
+	//Checks to see if objects need to be deleted if off screen
 	void updateT() {
 		for (int i = 0; i < poolCapacity; i++) {
 			if (pool[i].id == 0 && pool[i+1].id != 0 && i < poolCapacity + 1) {
@@ -98,6 +99,7 @@ public:
 			}
 		}
 	}
+	//Cloning of items
 	void updateClicked() {
 		if (!free[0]) {
 			free[0] = true;
@@ -159,7 +161,7 @@ public:
 		return false;
 	}
 
-	T * retreive(size_t place) {
+	K * retreive(size_t place) {
 		if (pool[place] == nothing) {
 			return nothing;
 		}
@@ -188,7 +190,7 @@ public:
 	void setSize(size_t newCapacity) {
 		int temp = poolCapacity;
 		poolCapacity = newCapacity;
-		T * tempPool = new T[newCapacity];
+		K * tempPool = new K[newCapacity];
 		for (int i = 0; i < newCapacity; i++) {
 			if (i < temp) {
 				tempPool[i] = pool[i];
@@ -217,7 +219,7 @@ public:
 		}
 	}
 	void setObjects(T obj, T obj2, T obj3, T obj4) {
-		object = new T[4];
+		object = new K[4];
 		object[0] = obj;
 		object[1] = obj2;
 		object[2] = obj3;
@@ -225,7 +227,7 @@ public:
 		multiples = true;
 	}
 	void setObject(T obj) {
-		object = new T[4];
+		object = new K[4];
 		object[0] = obj;
 		multiples = false;
 	}

@@ -1,25 +1,25 @@
 #pragma once
 
-template <typename T>
+template <typename K>
 class tStack{
 private:
-	tVector<T> * vec;
+	tVector<K> * vec;
 public:
 	tStack() {
-		vec = new tVector<T>;
+		vec = new tVector<K>;
 	}
-	T & operator[](size_t index) {
+	K & operator[](size_t index) {
 		return vec.at(index);
 	}
 
-	void push(const T & value) {
+	void push(const K & value) {
 		vec->push_front(value);
 	}
 	void pop() {
 		vec->pop_front();
 	}
 
-	T & top() {
+	K & top() {
 		return vec[0];
 	}
 
@@ -32,22 +32,22 @@ public:
 };
 
 
-template <typename T>
+template <typename K>
 class tQueue{
 private:
-	tVector<T> * vec;
+	tVector<K> * vec;
 public:
 	tQueue() {
-		vec = new tVector<T>;
+		vec = new tVector<K>;
 	}
-	tQueue(size_t count, const T & value) {
-		vec = new tVector<T>;
+	tQueue(size_t count, const K & value) {
+		vec = new tVector<K>;
 		for (int i = 0; i < count; i++) {
 			push(value);
 		}
 	}
 
-	void push(const T & value) {
+	void push(const K & value) {
 		vec->push_back(value);
 	}
 	void pop() {
@@ -58,10 +58,10 @@ public:
 		vec->print();
 	}
 
-	T & front() {
+	K & front() {
 		vec[0];
 	}
-	T & front() const {
+	K & front() const {
 		vec[0];
 	}
 	bool empty() const {

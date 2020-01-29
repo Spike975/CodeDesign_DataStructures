@@ -4,9 +4,9 @@
 #include <fstream>
 #include <string>
 
-template<typename T>
+template<typename K>
 struct Node {
-	T data;
+	K data;
 	Node * next;
 };
 
@@ -15,9 +15,9 @@ struct NodeB {
 	NodeB * next;
 };
 
-template<typename T>
+template<typename K>
 class tForwardList {
-	Node<T> * head;
+	Node<K> * head;
 	int size;
 public:
 	tForwardList() {
@@ -37,8 +37,8 @@ public:
 	}
 
 	void print() {
-		Node<T> * temp = head;
-		Node<T> * temp2=NULL;
+		Node<K> * temp = head;
+		Node<K> * temp2=NULL;
 		while (temp != NULL){
 			temp2 = temp;
 			std::cout << temp2->data<< '\n';
@@ -51,8 +51,8 @@ public:
 		delete temp;
 		delete temp2;
 	}
-	void push_front(const T& val) {
-		Node<T> * temp = new Node<T>;
+	void push_front(const K& val) {
+		Node<K> * temp = new Node<K>;
 		temp->data = val;
 		temp->next = head;
 		head = temp;
@@ -72,10 +72,10 @@ public:
 		head = NULL;
 	}
 	void resize(size_t newSize) {
-		Node<T> * temp;
+		Node<K> * temp;
 		if (newSize > size) {
 			for (int i = size; i < newSize; i++) {
-				temp = new Node<T>;
+				temp = new Node<K>;
 				temp->data = 0;
 				temp->next = head;
 				head = temp;
@@ -86,15 +86,15 @@ public:
 		}
 		else {
 			for (int i = size; i < newSize; i++) {
-				temp = new Node<T>;
+				temp = new Node<K>;
 				temp = head->next;
 				head = temp;
 			}
 		}
 		size = newSize;
 	}
-	void remove(const T & val) {
-		Node<T> * temp = head, *prev=head;
+	void remove(const K & val) {
+		Node<K> * temp = head, *prev=head;
 		if (temp != NULL && temp->data == val) {
 			head = temp->next;
 			temp = head;
@@ -112,10 +112,10 @@ public:
 		delete temp;
 	}
 
-	T& front() {
+	K& front() {
 		return head[0].data;
 	}
-	const T& front() const {
+	const K& front() const {
 		return head[0]->data;
 	}
 

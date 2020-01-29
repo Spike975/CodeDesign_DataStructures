@@ -3,10 +3,10 @@
 #include <iostream>
 #include <string>
 
-template<typename T>
+template<typename K>
 class tObjectPool{
 private:
-	T * pool;
+	K * pool;
 	bool * free;
 	size_t poolCapacity;
 public:
@@ -21,13 +21,13 @@ public:
 		delete free;
 	}
 
-	T * retreive() {
+	K * retreive() {
 		if (pool == NULL) {
 			return NULL;
 		}
 		return pool;
 	}
-	void recycle(T * obj) {
+	void recycle(K * obj) {
 
 	}
 
