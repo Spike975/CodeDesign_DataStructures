@@ -20,11 +20,11 @@ int main()
 	int screenWidth = 800;
 	int screenHeight = 450;
 
-	InitWindow(screenWidth, screenHeight, "raylib [core] example - basic window");
+	InitWindow(screenWidth, screenHeight, "TEST WINDOW");
 
 
 	tObjectPool<Texture2D> * meteors = new tObjectPool<Texture2D>;
-	meteors->setObject(LoadTexture("resources/spaceMeteors_001.png"));
+	meteors->setObjects(LoadTexture("resources/spaceMeteors_001.png"), LoadTexture("resources/spaceMeteors_002.png"), LoadTexture("resources/spaceMeteors_003.png"), LoadTexture("resources/spaceMeteors_004.png"));
 	meteors->setSize(80);
 	SetTargetFPS(60);
 	while (!WindowShouldClose()){
@@ -33,7 +33,6 @@ int main()
 
 		meteors->Draw();
 		meteors->updateClicked();
-
 
 		EndDrawing();
 	}

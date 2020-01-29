@@ -12,11 +12,12 @@ template<typename T>
 class tObjectPool {
 private:
 	T * pool;
-	T object;
+	T * object;
 	T nothing;
 	double thistime;
 	position * pos;
 	bool * free;
+	bool multiples;
 	size_t poolCapacity;
 	bool clicked;
 	position tempMouse;
@@ -30,6 +31,7 @@ public:
 		free = new bool[poolCapacity];
 		boolReset();
 		clicked = false;
+		multiples = false;
 	}
 	tObjectPool(size_t initialCapacity) {
 		poolCapacity = initialCapacity;
@@ -42,6 +44,7 @@ public:
 		pos = position[poolCapacity];
 		boolReset();
 		clicked = false;
+		multiples = false;
 	}
 	~tObjectPool() {
 		delete[] pool;
@@ -98,7 +101,12 @@ public:
 	void updateClicked() {
 		if (!free[0]) {
 			free[0] = true;
-			pool[0] = object;
+			if (multiples) {
+				pool[0] = object[rand() % 4];
+			}
+			else {
+				pool[0] = object[0];
+			}
 			pos[0].x = (GetScreenWidth() / 2) - (pool[0].width / 2);
 			pos[0].y = (GetScreenHeight() / 2) - (pool[0].height / 2);
 		}
@@ -106,25 +114,46 @@ public:
 		if (!clicked) {
 			for (int i = 0; i < poolCapacity; i++) {
 				if (free[i]) {
+					if (mouseTextColl(pool[i], pos[i])) {
+						DrawRectangleLines((int)pos[i].x, (int)pos[i].y, (int)pool[i].width, (int)pool[i].height, WHITE);
+					}
 					if (mouseTextColl(pool[i], pos[i]) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
 						clicked = true;
 						curr++;
-						tempMouse.x = GetMouseX();
-						tempMouse.y = GetMouseY();
+						tempMouse.x = (GetMouseX() - pos[i].x);
+						tempMouse.y = (GetMouseY() - pos[i].y);
+						break;
 					}
 					else if (mouseTextColl(pool[i], pos[i]) && IsMouseButtonPressed(MOUSE_RIGHT_BUTTON)) {
-
+						recycle(i);
+						curr--;
 					}
 				}
 			}
 		}
 		else {
-			pool[curr] = object;
+			if (!free[curr]) {
+				if (multiples) {
+					pool[curr] = object[rand() % 4];
+				}
+				else {
+					pool[curr] = object[0];
+				}
+				free[curr] = true;
+			}
+			pos[curr].x = GetMouseX() - tempMouse.x;
+			pos[curr].y = GetMouseY() - tempMouse.y;
+			if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+				clicked = false;
+			}
+		}
+		if (curr < 0) {
+			curr = 0;
 		}
 	}
 
 	bool mouseTextColl(Texture2D text, position var) {
-		if (var.x > GetMouseX() && var.y > GetMouseY() && var.y + text.height < GetMouseY() && var.x + text.width < GetMouseX()) {
+		if (var.x < GetMouseX() && var.y < GetMouseY() && var.y + text.height > GetMouseY() && var.x + text.width > GetMouseX()) {
 			return true;
 		}
 		return false;
@@ -152,7 +181,7 @@ public:
 	}
 	void recycle(size_t place) {
 		pool[place] = nothing;
-
+		free[place] = false;
 		updateT();
 		zeroed();
 	}
@@ -187,8 +216,18 @@ public:
 			}
 		}
 	}
+	void setObjects(T obj, T obj2, T obj3, T obj4) {
+		object = new T[4];
+		object[0] = obj;
+		object[1] = obj2;
+		object[2] = obj3;
+		object[3] = obj4;
+		multiples = true;
+	}
 	void setObject(T obj) {
-		object = obj;
+		object = new T[4];
+		object[0] = obj;
+		multiples = false;
 	}
 
 	size_t capacity() {
