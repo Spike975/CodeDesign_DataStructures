@@ -1,14 +1,12 @@
 #include "hash.h"
 
 int main() {
-	char * cString = new char[50];
-	std::string news;
-	std::cout << "Input words/leters:\n";
-	std::cin.getline(cString, 6);
-	std::cout << "Input words/leters:\n";
-	std::cin >> news;
+	std::string key = "test";
+	tHashmap<std::string, int> * test = new tHashmap<std::string, int>(50);
 
-	std::cout << hashCString(cString, 5) << '\n';
-	std::cout << hashStdString(news) << '\n';
+	test->setKey(key, 5);
+	
+	std::cout << test[key];
+
 	return 0;
 }

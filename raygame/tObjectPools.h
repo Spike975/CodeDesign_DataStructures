@@ -18,6 +18,9 @@ private:
 	position * pos;
 	bool * free;
 	size_t poolCapacity;
+	bool clicked;
+	position tempMouse;
+	int curr = 0;
 public:
 	tObjectPool() {
 		poolCapacity = 0;
@@ -25,6 +28,8 @@ public:
 		pool = new T[poolCapacity];
 		pos = new position[poolCapacity];
 		free = new bool[poolCapacity];
+		boolReset();
+		clicked = false;
 	}
 	tObjectPool(size_t initialCapacity) {
 		poolCapacity = initialCapacity;
@@ -35,11 +40,19 @@ public:
 		}
 		free = new bool[poolCapacity];
 		pos = position[poolCapacity];
+		boolReset();
+		clicked = false;
 	}
 	~tObjectPool() {
 		delete[] pool;
 		delete[] pos;
 		delete[] free;
+	}
+
+	void boolReset() {
+		for (int i = 0; i < poolCapacity; i++) {
+			free[i] = false;
+		}
 	}
 
 	void zeroed() {
@@ -83,9 +96,39 @@ public:
 		}
 	}
 	void updateClicked() {
+		if (!free[0]) {
+			free[0] = true;
+			pool[0] = object;
+			pos[0].x = (GetScreenWidth() / 2) - (pool[0].width / 2);
+			pos[0].y = (GetScreenHeight() / 2) - (pool[0].height / 2);
+		}
+		int temp;
+		if (!clicked) {
+			for (int i = 0; i < poolCapacity; i++) {
+				if (free[i]) {
+					if (mouseTextColl(pool[i], pos[i]) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+						clicked = true;
+						curr++;
+						tempMouse.x = GetMouseX();
+						tempMouse.y = GetMouseY();
+					}
+					else if (mouseTextColl(pool[i], pos[i]) && IsMouseButtonPressed(MOUSE_RIGHT_BUTTON)) {
 
+					}
+				}
+			}
+		}
+		else {
+			pool[curr] = object;
+		}
 	}
 
+	bool mouseTextColl(Texture2D text, position var) {
+		if (var.x > GetMouseX() && var.y > GetMouseY() && var.y + text.height < GetMouseY() && var.x + text.width < GetMouseX()) {
+			return true;
+		}
+		return false;
+	}
 
 	T * retreive(size_t place) {
 		if (pool[place] == nothing) {
@@ -126,6 +169,9 @@ public:
 			}
 		}
 		pool = tempPool;
+		free = new bool[newCapacity];
+		pos = new position[newCapacity];
+		boolReset();
 	}
 	void setActive(size_t size) {
 		if (size > poolCapacity) {

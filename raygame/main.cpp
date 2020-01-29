@@ -32,7 +32,7 @@ int main()
 		ClearBackground(BLACK);
 
 		meteors->Draw();
-		meteors->update();
+		meteors->updateClicked();
 
 
 		EndDrawing();
