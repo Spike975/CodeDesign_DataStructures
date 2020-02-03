@@ -218,7 +218,7 @@ public:
 			}
 		}
 	}
-	void setObjects(T obj, T obj2, T obj3, T obj4) {
+	void setObjects(K obj, K obj2, K obj3, K obj4) {
 		object = new K[4];
 		object[0] = obj;
 		object[1] = obj2;
@@ -226,7 +226,7 @@ public:
 		object[3] = obj4;
 		multiples = true;
 	}
-	void setObject(T obj) {
+	void setObject(K obj) {
 		object = new K[4];
 		object[0] = obj;
 		multiples = false;
